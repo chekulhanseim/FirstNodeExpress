@@ -6,6 +6,8 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
+var port = process.env.PORT || 8080;
+
 var app = express();
 
 app.use(logger("dev"));
@@ -17,6 +19,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-var listener = app.listen(8080, function() {
+var listener = app.listen(port, function() {
   console.log("Listening on port " + listener.address().port);
 });
+
+//  "start": "nodemon app.js localhost 8080"
