@@ -1,2 +1,0 @@
-# FirstNodeExpress
-Created with CodeSandbox
